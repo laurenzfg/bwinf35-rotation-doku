@@ -1,0 +1,39 @@
+Der Compilierungsbefehl lautet:
+
+\shellcmd{g++ rahmen.cpp rahmen.h main.cpp -o rotation.out -std=c++11}
+
+Alle drei gegebenen Beispiele hatten eine Lösung.
+Für alle Beispiele sind die Input- und vollständigen Outputdateien im Ordner ... zu finden.
+
+\subsection{Beispiel 1}
+	Gekürzte Programmausgabe:\\
+	\shellout{  \$ ./rotation.out \\
+				Dateiname: rotation1\_03.txt   \\
+				Beste Loesung mit Laenge 6 : llllrl\\
+				Laufzeit: 0.000726s\\
+}
+\subsection{Beispiel 2}
+	Gekürzte Programmausgabe:\\
+	\shellout{  \$ ./rotation.out \\
+				Dateiname: rotation2\_03.txt \\
+				Beste Loesung mit Laenge 22 : rrrrlrrlllllllrrrrrrlr \\
+				Laufzeit: 0.004839s
+}
+\subsection{Beispiel 3}
+	Gekürzte Programmausgabe:\\
+	\shellout{ \$ ./rotation.out 
+				Dateiname: rotation3\_03.txt\\
+				Beste Loesung mit Laenge 90 : lrrrrlllrrrlllllllrrllrrrrrrrlrrrrrrrrrrrlllrrrrrlllll
+				rrrrllrrrrrrrlrlllllllllllrllrrrrrlr\\
+				Laufzeit: 2911.92s
+}
+\subsection{Beispiel 4}
+	Hier noch ein Beispiel, für das keine Lösung existiert.\\
+	Gekürzte Programmausgabe:\\
+	\shellout{ \$ ./rotation.out \\ 
+								Dateiname: rotation4\_03.txt \\
+								Keine Loesung vorhanden. \\
+								Laufzeit: 0.034148s
+}
+
+

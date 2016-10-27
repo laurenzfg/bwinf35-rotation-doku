@@ -1,0 +1,13 @@
+	Für das Speichern der Zustände der Puzzleaufgabe nutzen wir einen auf dem zweidimensionalen Array. 
+	Da die Größe dieses Arrays zum Zeitpunkt der Compilierung unbekannt ist, nutzen wir pointer-to-pointer.
+	Das Hauptverfahren läuft in der Funktion \(void\ loese(char\ **f)\) der Hauptklasse \(rahmen\).
+  Als weitere Hilfsfunktion gibt es \(void\ rotieren\_links(char\ **\&f)\), zum rotieren nach links, 
+	und das enstprechende Gegenstück \(void\ rotieren\_rechts(char\ **\&f)\) zum rotieren nach rechts.
+	Innerhalb der rotierenden Funktionen wird am Ende immer noch die Funktion \(void\ gravitation(char\ **\&f)\) aufgerufen,
+	diese lässt schwebende Steine nach unten fallen. Um zu überprüfen ob ein Zustand der Puzzleaufgabe eine Lösung ist, 
+	dient die Funktion \(bool\ ist\_loesung(char\ **f)\).
+	Zur Umsetzung der Ebenen nutzen wir einen std::vector \(std::vector<std::vector<char\ **>\ >\ baum\).
+	In erster Dimension werden in diesem std::vector die Ebenen und in Zweiter die Zustände der Puzzleaufgabe gespeichert. 
+	Man könnte auch sagen, dass die erste Dimension über die Ebenen und die zweite über die Zustände der Puzzleaufgabe iteriert.
+	
+	
