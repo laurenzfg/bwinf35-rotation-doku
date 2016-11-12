@@ -14,10 +14,15 @@
 	Wenn man nicht überprüfen würde, ob der neue Zustand der Puzzleaufgabe tatsächlich neu ist, würde die Ebenegröße (Anzahl der Elemante auf einer Ebene) mit \(2^n\) wachsen.  
 	n wäre dabei die Anzahl der Rotationen. Durch die Überprüfung auf Bekanntheit des Zustands spart man sich sehr viele Elemente. 
 	Wie stark man allerdings das Wachstum der Ebenengröße dadurch begrenzt, konnten wir nicht feststellen. Indirekt lässt sich dazu jedoch eins sagen: 
-	Eine Puzzleaufgabe kann insgesamt nur eine endliche Zahl m an Zuständen haben. 
-	Hat die Puzzleaufgabe keine Lösung, müsste man mit unserem Algorithmus, um dies nachzuweisen, alle m möglichen Zustände erzeugen.
-	Hat die Puzzleaufgabe eine Lösung, müsste man nur in einem Worst-Case Szenario alle m Zustände erzeugen, in allen anderen aber meist deutlich weniger.
-	Die obere Schranke für die Lauzeitkomplexität beträgt also \(O(m)\). Da uns diese Anzahl m der Zustände jedoch nicht bekannt ist, hilft uns diese Überlegung im Bezug auf die Laufzeit nicht weiter. 
+	Eine Puzzleaufgabe kann insgesamt nur eine endliche Zahl \(m\) an Zuständen haben. 
+	Hat die Puzzleaufgabe keine Lösung, müsste man mit unserem Algorithmus, um dies nachzuweisen, alle \(m\) möglichen Zustände erzeugen.
+	Hat die Puzzleaufgabe eine Lösung, müsste man nur in einem Worst-Case Szenario alle \(m\) Zustände erzeugen, in allen anderen aber meist deutlich weniger.
+	Die obere Schranke für die Lauzeitkomplexität beträgt also \(O(m)\). Da uns diese Anzahl m der Zustände jedoch nicht bekannt ist, 
+	hilft uns diese Überlegung im Bezug auf die Laufzeit nicht weiter. 
 	Mit ihr kann man jedoch feststellen, dass unser Algorithmus in jedem Fall in m Schritten feststellen kann, ob das Problem eine Lösung hat und falls ja diese auch berechnen. 
-	Auch lässt sich für m eine obere Schranke festlegen: \(m < z^f\) \\ z ist dabei die Anzahl der möglichen Zustände für ein Feld der Puzzelaufgabe und f die Anzahl der Felder.
-	Dies ist jedoch nur eine sehr grobe obere Schranke. In den meisten Fällen liegt m deutlich unter ihr, da sie z.B. nicht beachtet, dass es nicht mehere Steine gleichen Types geben kann.
+	Auch lässt sich für m eine obere Schranke festlegen: \(m \le \frac{f!}{(f-s)!}\) \(s\) ist dabei die Anzahl der Steine und \(f\) die Anzahl der Felder. 
+	In dieser Vereinfachung wird angenommen, dass jeder Stein nur die Größe eines Feldes hat. Dies wird in den meisten Fällen jedoch nicht so sein.
+	Dazu kommt noch, dass man je nach Ausgangssituation, 
+	gar nicht alle theoretisch möglichen Zustände durch eine Verkettung von Rotationen erzeugen kann. 
+	Also ist \(m\) in den meisten Fällen deutlich kleiner. 
+
