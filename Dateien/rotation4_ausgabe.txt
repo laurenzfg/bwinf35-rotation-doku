@@ -1,4 +1,4 @@
-./rotation.out 
+$ ./rotation.out 
 Dateiname: rotation4_03.txt
 Ebene : 1  Groese : 2 Zuwachsrate : 1
 Ebene : 2  Groese : 4 Zuwachsrate : 1
@@ -65,4 +65,5 @@ Ebene : 62  Groese : 8 Zuwachsrate : 0.4
 Ebene : 63  Groese : 2 Zuwachsrate : 0.125
 Ebene : 64  Groese : 0 Zuwachsrate : 0
 Keine Loesung vorhanden.
-Laufzeit: 0.034148s
+Laufzeit: 0.036352s
+

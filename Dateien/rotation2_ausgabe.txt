@@ -1,5 +1,5 @@
 $ ./rotation.out 
-Dateiname: rotation2.txt
+Dateiname: rotation2_03.txt
 Ebene : 1  Groese : 2 Zuwachsrate : 1
 Ebene : 2  Groese : 4 Zuwachsrate : 1
 Ebene : 3  Groese : 4 Zuwachsrate : 0.5
@@ -329,4 +329,5 @@ Beste Loesung mit Laenge 22 : rrrrlrrlllllllrrrrrrlr
 #888881    #
 ######1#####
 
-Laufzeit: 0.004839s
+Laufzeit: 0.004817s
+
