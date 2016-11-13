@@ -1,12 +1,12 @@
 	Für das Speichern der Zustände der Puzzleaufgabe nutzen wir einen auf dem zweidimensionalen Array. 
 	Da die Größe dieses Arrays zum Zeitpunkt der Kompilierung unbekannt ist, nutzen wir pointer-to-pointer.
 	Das Hauptverfahren läuft in der Funktion \texttt{void loese(char **f))} der Hauptklasse \texttt{rahmen}.
-  Als weitere Hilfsfunktion gibt es \texttt{void rotieren\_links(char **f)}, zum rotieren nach links, 
-	und das enstprechende Gegenstück \texttt{void rotieren\_rechts(char **f)} zum rotieren nach rechts.
-	Innerhalb der rotierenden Funktionen wird am Ende immer noch die Funktion \texttt{void gravitation(char **f)} aufgerufen,
-	diese lässt schwebende Steine nach unten fallen. 
+  Als weitere Hilfsfunktion gibt es \texttt{void rotieren\_links(char **f)}, zum Rotieren nach links, 
+	und das enstprechende Gegenstück \texttt{void rotieren\_rechts(char **f)} zum Rotieren nach rechts.
+	Innerhalb der rotierenden Funktionen wird am Ende immer noch die Funktion \texttt{void gravitation(char **f)} aufgerufen.
+	Diese lässt schwebende Steine nach unten fallen. 
 	
-	Um zu überprüfen ob ein Zustand der Puzzleaufgabe eine Lösung ist, dient die Funktion \\
+	Um zu überprüfen, ob ein Zustand der Puzzleaufgabe eine Lösung ist, dient die Funktion \\
 	\texttt{bool ist\_loesung(char **f)}.
 	Zur Umsetzung der Ebenen nutzen wir einen std::vector \\\texttt{std::vector<std::vector<char **> > baum}.
 	In erster Dimension werden in diesem std::vector die Ebenen und in zweiter die Zustände der Puzzleaufgabe gespeichert. 
@@ -16,15 +16,15 @@
 	Über diesen lassen sich  die Zustände leichter vergleichen. Zum Speichern der Hashwerte nutzen 
 	wir einen mehrdimensionalen std::vector \\\texttt{std::vector<std::vector<char *> > hashs}. Dieser hat die gleiche Strukutur wie der std::vector \texttt{baum}.
 	 Zusammen mit einer Änderung der Vergleichsreihenfolge
-	bei der Überprüfung auf Bereitsvorhandensein eines Zustandes, konnte die Laufzeit bei rotation3\_03.txt um den Faktor 3 verringert werden.
-	Die Änderung der Vergleichsreihenfolge stützt sich dabei aud die Überlegung, dass Zustände, zwischen denen weniger Operationen nötig waren, ähnlicher sind.
-	Deshalb beginnen wir bei dem Vergleichen auf bereits Vorhandensein eines Zustandes der Puzzleaufgabe chronologisch Rückwärts, 
-	fangen also mit den Neusten an und enden mit den Ältesten.
+	bei der Überprüfung auf bereits Vorhandensein eines Zustandes, konnte die Laufzeit bei rotation3\_03.txt um den Faktor 3 verringert werden.
+	Die Änderung der Vergleichsreihenfolge stützt sich dabei auf die Überlegung, dass Zustände, zwischen denen weniger Operationen nötig waren, ähnlicher sind.
+	Deshalb beginnen wir bei dem Vergleichen auf bereits Vorhandensein eines Zustandes der Puzzleaufgabe chronologisch rückwärts, 
+	fangen also mit den Neuesten an und enden mit den Ältesten.
 
-	Die zur Umsetzung der Graviation genutzte Funktion \texttt{void gravitation(char **f)} geht einen Zustand der Puzzleaufgabe von unten nach oben durch.
-	Trifft der Algorithmus auf den Teil eines Steins, wird die Größe dieses Steins bestimmt. Befindet sich unter dem Stein keine Hindernisse, 
+	Die zur Umsetzung der Gravitation genutzte Funktion \texttt{void gravitation(char **f)} geht einen Zustand der Puzzleaufgabe von unten nach oben durch.
+	Trifft der Algorithmus auf den Teil eines Steins, wird die Größe dieses Steins bestimmt. Befinden sich unter dem Stein keine Hindernisse, 
 	wird dieser ensprechend weit nach unten versetzt. Dabei merkt sich das Programm, welche Steine es bereits versetzt hat. 
-	Trift es auf einen bereits versetzten Stein, wird dieser ignoriert.
+	Trifft es auf einen bereits versetzten Stein, wird dieser ignoriert.
 
  
 	
