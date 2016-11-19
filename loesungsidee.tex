@@ -8,9 +8,7 @@
 	\end{enumerate}
 
 	Dann gehe man zur nächsthöheren Ebene über und führe wieder für alle Elemente die Logik aus.
-	Dies wird solange weitergeführt bis entweder eine Lösung gefunden wird, oder auf der nächsten Ebene kein Element mehr vorhanden ist.
-	In diesem Fall existiert keine Lösung.
-
+	Sobald ein Element aus dem Puzzle fällt, wird die Logik beendet und die Lösung ausgegeben. Sobald Drehungen der Zustände auf der höchsten Ebene keine neuen Zustände liefern, kann mit Sicherheit gesagt werden, dass keine Lösung vorhanden ist.
 	
 \subsection{Laufzeit}
 	Wenn man nicht überprüfen würde, ob der neue Zustand der Puzzleaufgabe tatsächlich neu ist, würde die Ebenengröße (Anzahl der Elemente auf einer Ebene) mit \(2^n\) wachsen.  
