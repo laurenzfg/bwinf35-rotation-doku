@@ -2,13 +2,13 @@
 	Zur Lösung des Problems betrachte man mehrere Ebenen. Auf jeder dieser Ebenen lassen sich Zustände der Puzzleaufgabe speichern. 
 	Auf Ebene 1 liegt nur der Ausgangszustand. Für jedes Element einer Ebene führe man folgende Logik aus:
 
-	1. Drehe das Element (der Zustand der Puzzleaufgabe) sowohl nach links als auch nach rechts.\\
-	2. Wenn der in 1. erzeugte Zustand neu und keine Lösung der Aufgabe ist, speichere diesen auf der nächsthöheren Ebene ab.
+	\begin{enumerate}
+		\item Drehe das Element (der Zustand der Puzzleaufgabe) sowohl nach links als auch nach rechts.
+		\item Ist der in 1. erzeugte Zustand neu und keine Lösung der Aufgabe, wird dieser auf der nachfolgenden Ebene gespeichert.
+	\end{enumerate}
 
 	Dann gehe man zur nächsthöheren Ebene über und führe wieder für alle Elemente die Logik aus.
-	Dies wird solange weitergeführt bis entweder eine Lösung gefunden wird, oder auf der nächsten Ebene kein Element mehr vorhanden ist.
-	In diesem Fall existiert keine Lösung.
-
+	Sobald ein Element aus dem Puzzle fällt, wird die Logik beendet und die Lösung ausgegeben. Sobald Drehungen der Zustände auf der höchsten Ebene keine neuen Zustände liefern, kann mit Sicherheit gesagt werden, dass keine Lösung vorhanden ist.
 	
 \subsection{Laufzeit}
 	Wenn man nicht überprüfen würde, ob der neue Zustand der Puzzleaufgabe tatsächlich neu ist, würde die Ebenengröße (Anzahl der Elemente auf einer Ebene) mit \(2^n\) wachsen.  
