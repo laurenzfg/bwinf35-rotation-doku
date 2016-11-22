@@ -7,8 +7,8 @@
 		\item Ist der in 1. erzeugte Zustand neu und keine Lösung der Aufgabe, wird dieser auf der nachfolgenden Ebene gespeichert.
 	\end{enumerate}
 
-	Dann gehe man zur nächsthöheren Ebene über und führe wieder für alle Elemente die Logik aus.
-	Sobald ein Element aus dem Puzzle fällt, wird die Logik beendet und die Lösung ausgegeben. Sobald Drehungen der Zustände auf der höchsten Ebene keine neuen Zustände liefern, kann mit Sicherheit gesagt werden, dass keine Lösung vorhanden ist.
+	Daraufhin wird diese Logik für alle Elemente auf der nächsten Ebene wiederholt.
+	Sobald ein Element nach den Drehungen aus dem Puzzle fällt, wird die Logik unterbrochen und die Lösung ausgegeben. Sobald Drehungen der Zustände einer Ebene ausschließlich bekannte Zustände liefern, kann mit Sicherheit gesagt werden, dass keine Lösung vorhanden ist, da folglich alle durch Drehen erreichbaren Zustände bekannt sind.
 	
 \subsection{Laufzeit}
 	Wenn man nicht überprüfen würde, ob der neue Zustand der Puzzleaufgabe tatsächlich neu ist, würde die Ebenengröße (Anzahl der Elemente auf einer Ebene) mit \(2^n\) wachsen.  
