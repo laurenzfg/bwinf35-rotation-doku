@@ -12,19 +12,15 @@
 	
 \subsection{Laufzeit}
 	Wenn man nicht überprüfen würde, ob der neue Zustand der Puzzleaufgabe tatsächlich neu ist, würde die Ebenengröße (Anzahl der Elemente auf einer Ebene) mit \(2^n\) wachsen.  
-	n wäre dabei die Anzahl der Rotationen. Durch die Überprüfung auf Bekanntheit des Zustands spart man sich sehr viele Elemente. 
-	Wie stark man allerdings das Wachstum der Ebenengröße dadurch begrenzt, konnten wir nicht feststellen. Indirekt lässt sich dazu jedoch eins sagen: 
-	Eine Puzzleaufgabe kann insgesamt nur eine endliche Zahl \(m\) an Zuständen haben. 
+	n wäre dabei die Anzahl der Rotationen. Da wir allerdings nur neue Objekte aufnehmen, steigt die Anzahl deutlich langsamer. 
+	Eine genaue Formel für das Ebenenwachstum konnten wir nicht finden, jedoch konnten wir beweisen, dass es nur endlich verschiedene Zustände eines Puzzles gibt. Die Anzahl der möglichen Zustände \(m\) hängt dabei sowohl von der Puzzlegröße als auch von Anzahl und Größe der Stäbchen ab.
 
-	Hat die Puzzleaufgabe keine Lösung, müsste man mit unserem Algorithmus alle \(m\) möglichen Zustände erzeugen, um dies nachzuweisen.
-	Hat die Puzzleaufgabe eine Lösung, müsste man nur in einem Worst-Case Szenario alle  Zustände erzeugen, in allen anderen aber meist deutlich weniger.
-	Die obere Schranke für die Laufzeitkomplexität beträgt also \(O(m)\). Da uns diese Anzahl \(m\) der Zustände jedoch nicht bekannt ist, 
-	hilft uns diese Überlegung in Bezug auf die Laufzeit nicht weiter. 
+	Hat die Puzzleaufgabe keine Lösung, müssen alle \(m\) möglichen Zustände berechnet werden. Nur so kann bewiesen werden, dass es sicher keine Lösung gibt.
+	Hat die Puzzleaufgabe hingegen eine Lösung, müsste man nur in einem Worst-Case Szenario ebenfalls alle Zustände erzeugen, schließlich könnte die Lösung der zuletzt erzeugte Zustand sein. Theoretisch könnte auch der erste Zustand direkt die Lösung sein, die Laufzeit entspräche dann \(O(1)\).
+	Die obere Schranke für die Laufzeitkomplexität ist allerdings \(O(m)\). Da uns m nicht bekannt ist, können wir die maximale Laufzeit so jedoch nicht vorhersagen.
 
 	Mit ihr kann man jedoch feststellen, dass unser Algorithmus in jedem Fall in \(m\) Schritten feststellen kann, ob das Problem eine Lösung hat und falls ja, diese auch berechnen. 
 	Auch lässt sich für m eine obere Schranke festlegen: \(m \le \frac{f!}{(f-s)!}\) \(s\) ist dabei die Anzahl der Steine und \(f\) die Anzahl der Felder. 
 	In dieser Vereinfachung wird angenommen, dass jeder Stein nur die Größe eines Feldes hat. Dies wird in den meisten Fällen jedoch nicht so sein.
-	Dazu kommt noch, dass man je nach Ausgangssituation, 
-	gar nicht alle theoretisch möglichen Zustände durch eine Verkettung von Rotationen erzeugen kann. 
-	Also ist \(m\) in den meisten Fällen deutlich kleiner. 
+	\(m\) ist allerdings in den meisten Fällen deutlich kleiner als die oben genannte Schranke, da größere Steine für eine geringere Zahl an möglichen Zuständen sorgen. Ferner kann nicht jeder theoretisch mögliche Zustand des Puzzles durch Kippen nach rechts oder links erreicht werden.
 
