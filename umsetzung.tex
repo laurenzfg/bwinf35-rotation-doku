@@ -6,8 +6,7 @@
 	Innerhalb der die Rotation umsetzenden Funktionen wird am Ende immer noch die Funktion \texttt{void gravitation(char **f)} aufgerufen.
 	Diese lässt schwebende Steine nach unten fallen. 
 	
-	Um zu überprüfen, ob ein Zustand der Puzzleaufgabe eine Lösung ist, dient die Funktion \\
-	\texttt{bool ist\_loesung(char **f)}.
+	\texttt{bool ist\_loesung(char **f)} überprüft, ob der übergebene Zustand eine Lösung darstellt.
 	Zur Umsetzung der Ebenen nutzen wir einen std::vector \\\texttt{std::vector<std::vector<char **> > baum}.
 	In erster Dimension werden in diesem std::vector die Ebenen und in zweiter die Zustände der Puzzleaufgabe gespeichert. 
 	Man könnte auch sagen, dass die erste Dimension über die Ebenen und die zweite über die Zustände der Puzzleaufgabe iteriert.
